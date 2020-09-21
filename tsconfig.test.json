@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    // Output settings for "node:12"
+    "lib": ["ES2019", "ES2020.BigInt", "ES2020.Promise"],
+    "module": "CommonJS",
+    "target": "ES2019"
+  },
+  "include": ["./src/**/*.ts"]
+}
