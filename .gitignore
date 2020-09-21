@@ -4,6 +4,15 @@
 # Node.js dependencies.
 node_modules/
 
+# NPM shrinkwrap.
+# We're using `package-lock.json` instead.
+npm-shrinkwrap.json‎
+
+# Yarn and PNPM lockfiles.
+# We're using NPM and it provides its own lockfile.
+yarn.lock
+pnpm-lockfile.yaml
+
 # Log files.
 *.log
 *.log.*

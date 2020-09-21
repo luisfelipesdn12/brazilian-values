@@ -31,11 +31,11 @@
   "jsdelivr": "dist/brazilian-values.umd.js",
   "umd:main": "dist/brazilian-values.umd.js",
   "scripts": {
-    "test": "yarn run test:types && yarn run test:unit",
+    "test": "npm run test:types && npm run test:unit",
     "test:unit": "ava",
     "test:types": "tsc -p ./tsconfig.build.json --noEmit",
     "build": "bili",
-    "prepublishOnly": "yarn run test && yarn run build"
+    "prepublishOnly": "npm run test && npm run build"
   },
   "repository": {
     "type": "git",
