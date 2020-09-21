@@ -43,27 +43,6 @@ Os pacotes desse módulo também estão disponíveis nas CDNs [JSDelivr](https:/
 </script>
 ```
 
-### Docker
-
-Caso queira rodar em um ambiente isolado(container) você pode usar o [docker](https://www.docker.com/).
-
-Primeiro construa a imagem em sua maquina
-
-```
-docker build -t brazilian-values:latest .
-```
-
-Após isso rode o ambiente em modo interativo
-```
-docker run -it -v ${PWD}:/usr/src/app brazilian-values:latest bash
-```
-
-Você entrara em um container com o ambiente isolado da maquina. rode o yarn install e pode começar a usar todo o projeto`
-
-```
-yarn install
-```
-
 ## Como usar
 
 `brazilian-values` fornece funções para lidar com formatação, validação e conversão de valores brasileiros. Todas essas funções podem ser importadas do pacote.
@@ -448,6 +427,36 @@ isPhone('(13) 6 5093-2093')
 isPhone('(81) 555 178')
 //=> false
 ```
+
+## Contribuir
+
+### Usando o Docker
+
+Caso queira rodar em um ambiente isolado (container), você pode usar o [docker](https://www.docker.com/).
+
+1. Construa a imagem docker em sua maquina.
+
+   ```sh
+   docker build -t brazilian-values:latest .
+   ```
+
+2. Inicialize o `bash` na sua imagem docker.
+
+   ```sh
+   docker run -it -v ${PWD}:/usr/src/app brazilian-values:latest bash
+   ```
+
+3. No `bash` você poderá executar os _scripts_ definidos no [`package.json`](./package.json).
+
+   Ex.
+
+   ```sh
+   npm run test:unit -- -verbose
+   ```
+
+   - `npm run build` compila o código TypeScript e gera os _bundles_ para diferentes tipos de módulos.
+
+   - `npm run test:unit` executa os testes unitários.
 
 ## Licença
 
