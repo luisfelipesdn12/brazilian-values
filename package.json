@@ -31,10 +31,9 @@
   "jsdelivr": "dist/brazilian-values.umd.js",
   "umd:main": "dist/brazilian-values.umd.js",
   "scripts": {
-    "test": "npm run test:types && npm run test:unit",
+    "test": "npm run test:transpile && npm run test:unit",
     "test:transpile": "tsc -p ./tsconfig.test.json",
     "test:unit": "ava -verbose",
-    "test:types": "tsc -p ./tsconfig.build.json --noEmit",
     "build": "npm run build:transpile && npm run build:bundle",
     "build:transpile": "tsc -p ./tsconfig.build.json",
     "build:bundle": "rollup --config ./rollup.config.js",
