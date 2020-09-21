@@ -1,0 +1,11 @@
+{
+  // Exclude transpiled TS modules and their source-maps.
+  "files.exclude": {
+    "src/**/*.js": true,
+    "src/**/*.js.map": true
+  },
+
+  // Automatically formats with Prettier.js on save.
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
