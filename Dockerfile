@@ -1,13 +1,11 @@
-from node:12-alpine
+FROM node:12
 
 WORKDIR /usr/src/app
 
-COPY package*.json ./
+COPY package.json ./
 
-RUN apk update && apk add bash
+COPY package-lock.json ./
 
-RUN yarn install
+RUN npm ci
 
 COPY . .
-
-RUN yarn add ./
