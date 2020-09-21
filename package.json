@@ -34,7 +34,9 @@
     "test": "npm run test:types && npm run test:unit",
     "test:unit": "ava",
     "test:types": "tsc -p ./tsconfig.build.json --noEmit",
-    "build": "bili",
+    "build": "npm run build:transpile && npm run build:bundle",
+    "build:transpile": "tsc -p ./tsconfig.build.json",
+    "build:bundle": "rollup --config ./rollup.config.js",
     "prepublishOnly": "npm run test && npm run build"
   },
   "repository": {
@@ -48,11 +50,9 @@
   "devDependencies": {
     "@types/prettier": "^2.1.1",
     "ava": "^3.12.1",
-    "bili": "^4.10.1",
     "prettier": "^2.1.2",
     "rollup": "^2.27.1",
     "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.27.2",
     "ts-node": "^8.10.2",
     "typescript": "^4.0.3"
   }
