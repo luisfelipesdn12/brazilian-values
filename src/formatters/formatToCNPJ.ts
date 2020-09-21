@@ -1,4 +1,4 @@
-import mapToNumeric from '../helpers/mapToNumeric';
+import mapToNumeric from '../helpers/mapToNumeric.js';
 
 /**
  * Formats step-by-step a `string` value into a CPF.

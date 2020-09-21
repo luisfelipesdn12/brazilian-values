@@ -1,5 +1,5 @@
-import type DatePieces from '../models/DatePieces';
-import parsePiecesToDate from './parsePiecesToDate';
+import type DatePieces from '../models/DatePieces.js';
+import parsePiecesToDate from './parsePiecesToDate.js';
 
 /**
  * Compare pieces of a date to values obtained from a Date instance.

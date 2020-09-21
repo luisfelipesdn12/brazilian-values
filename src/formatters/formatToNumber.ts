@@ -1,4 +1,4 @@
-import addPeriods from '../helpers/addPeriods';
+import addPeriods from '../helpers/addPeriods.js';
 
 /**
  * Formats a number to brazilian formatted number.

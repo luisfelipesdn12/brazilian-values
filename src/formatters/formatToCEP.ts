@@ -1,4 +1,4 @@
-import mapToNumeric from '../helpers/mapToNumeric';
+import mapToNumeric from '../helpers/mapToNumeric.js';
 
 /**
  * Format a `string` number sequence into CEP format.

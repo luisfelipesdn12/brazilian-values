@@ -1,4 +1,4 @@
-import normalizeWhiteSpaces from './normalizeWhiteSpaces';
+import normalizeWhiteSpaces from './normalizeWhiteSpaces.js';
 
 /**
  * Normalizes text white spaces, then splits into words.

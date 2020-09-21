@@ -1,5 +1,5 @@
-import comparePiecesToDate from '../helpers/comparePiecesToDate';
-import mapToPieces from '../helpers/mapToPieces';
+import comparePiecesToDate from '../helpers/comparePiecesToDate.js';
+import mapToPieces from '../helpers/mapToPieces.js';
 
 /**
  * Pattern to match brazilian formatted dates (99/99/9999).

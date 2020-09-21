@@ -1,5 +1,5 @@
-import formatToDate from './formatToDate';
-import fillWithZeros from '../helpers/fillWithZeros';
+import formatToDate from './formatToDate.js';
+import fillWithZeros from '../helpers/fillWithZeros.js';
 
 /**
  * Formats a Date instance to brazilian format of date and time, DD/MM/YYYY HH:mm.

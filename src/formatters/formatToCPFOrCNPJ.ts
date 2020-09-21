@@ -1,5 +1,5 @@
-import formatToCNPJ from './formatToCNPJ';
-import formatToCPF from './formatToCPF';
+import formatToCNPJ from './formatToCNPJ.js';
+import formatToCPF from './formatToCPF.js';
 
 /**
  * Check if a `string` value can be formatted to CPF.

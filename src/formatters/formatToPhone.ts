@@ -1,4 +1,4 @@
-import mapToNumeric from '../helpers/mapToNumeric';
+import mapToNumeric from '../helpers/mapToNumeric.js';
 
 /**
  * Formats a phone value into brazilian common phone formats.

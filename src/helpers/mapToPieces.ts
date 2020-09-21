@@ -1,4 +1,4 @@
-import type DatePieces from '../models/DatePieces';
+import type DatePieces from '../models/DatePieces.js';
 
 /**
  * Resolve a brazilian formatted date into date, month and year pieces.

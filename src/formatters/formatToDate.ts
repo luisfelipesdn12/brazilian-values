@@ -1,4 +1,4 @@
-import fillWithZeros from '../helpers/fillWithZeros';
+import fillWithZeros from '../helpers/fillWithZeros.js';
 
 /**
  * Formats a Date instance to brazilian format, DD/MM/YYYY.

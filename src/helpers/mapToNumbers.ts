@@ -1,4 +1,4 @@
-import mapToNumeric from './mapToNumeric';
+import mapToNumeric from './mapToNumeric.js';
 
 /**
  * Maps a text to a collection of it's numbers.

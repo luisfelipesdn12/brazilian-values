@@ -1,7 +1,7 @@
-import generateCheckSums from '../helpers/generateCheckSums';
-import getRemaining from '../helpers/getRemainig';
-import isRepeatedArray from '../helpers/isRepeatedValue';
-import mapToNumbers from '../helpers/mapToNumbers';
+import generateCheckSums from '../helpers/generateCheckSums.js';
+import getRemaining from '../helpers/getRemainig.js';
+import isRepeatedArray from '../helpers/isRepeatedValue.js';
+import mapToNumbers from '../helpers/mapToNumbers.js';
 
 /**
  * Pattern to match formatted CNPJ (99.999.999/9999-99) or 14 numbers.

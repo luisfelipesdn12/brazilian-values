@@ -1,4 +1,4 @@
-import splitOnLast from '../helpers/splitOnLast';
+import splitOnLast from '../helpers/splitOnLast.js';
 
 /**
  * Formats an Array into brazilian formatted list.

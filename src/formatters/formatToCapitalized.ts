@@ -1,5 +1,5 @@
-import capitalizeWord from '../helpers/capitalizeWord';
-import splitIntoWords from '../helpers/splitIntoWords';
+import capitalizeWord from '../helpers/capitalizeWord.js';
+import splitIntoWords from '../helpers/splitIntoWords.js';
 
 /**
  * Options for `formatToCapitalizedd` function.
@@ -52,12 +52,12 @@ const DEFAULT_WORDS_TO_KEEP_LOWER_CASE = [
  * @example ```js
  * formatToCapitalized('SERVIDOR PÚBLICO MUNICIPAL')
  * //=> 'Servidor Público Municipal'
- * 
+ *
  * formatToCapitalized('   os PrimEIROS  HOMens da tERra', {
  *   wordsToKeepLowerCase: ['os', 'da']
  * })
  * //=> 'Os Primeiros Homens da Terra'
- * 
+ *
  * formatToCapitalized('nova tv foi lançada', {
  *   wordsToKeepUpperCase: ['tv']
  * })
