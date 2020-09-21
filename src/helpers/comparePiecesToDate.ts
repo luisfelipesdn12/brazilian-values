@@ -1,4 +1,4 @@
-import DatePieces from '../models/DatePieces';
+import type DatePieces from '../models/DatePieces';
 import parsePiecesToDate from './parsePiecesToDate';
 
 /**

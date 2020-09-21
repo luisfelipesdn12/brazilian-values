@@ -1,17 +1,25 @@
 {
   "compilerOptions": {
-    // Module configuration
-    "moduleResolution": "node",
+    // Module settings
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
+    "isolatedModules": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
 
-    // Type-check configuration
+    // Type-check settings
     "alwaysStrict": true,
-    "noImplicitAny": true,
-    "noImplicitThis": true,
+    "forceConsistentCasingInFileNames": true,
+    "importsNotUsedAsValues": "error",
+    "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "strictPropertyInitialization": true,
-    "forceConsistentCasingInFileNames": true
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+
+    // Types settings
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "types": []
   }
 }
