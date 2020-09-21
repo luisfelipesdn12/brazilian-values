@@ -17,6 +17,10 @@ pnpm-lockfile.yaml
 *.log
 *.log.*
 
+# Transpiled TypeScript modules and their source-maps.
+src/**/*.js
+src/**/*.js.map
+
 # Generated sources & type definitions.
 dist/
 types/
