@@ -18,3 +18,30 @@ test('formatToCapitalized', (context) => {
     'Nova TV Foi Lançada',
   );
 });
+
+test("formatToCapitalized don't trim whitespaces when `trimTrailingWhiteSpaces` is false", (context) => {
+  context.is(
+    formatToCapitalized('   COM Espaços ANTES E DEPOIS \n\r', {
+      wordsToKeepLowerCase: ['e'],
+      trimTrailingWhiteSpaces: false,
+    }),
+    ' Com Espaços Antes e Depois ',
+  );
+});
+
+test("formatToCapitalized don't transform first word to lower-case", (context) => {
+  context.is(
+    formatToCapitalized('a primeira palavra é capitalizada', {
+      wordsToKeepLowerCase: ['a', 'é'],
+    }),
+    'A Primeira Palavra é Capitalizada',
+  );
+
+  context.is(
+    formatToCapitalized(' a primeira palavra é capitalizada mesmo com espaços ', {
+      trimTrailingWhiteSpaces: false,
+      wordsToKeepLowerCase: ['a', 'é', 'com'],
+    }),
+    ' A Primeira Palavra é Capitalizada Mesmo com Espaços ',
+  );
+});

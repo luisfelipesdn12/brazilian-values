@@ -1,5 +1,6 @@
-import capitalizeWord from '../helpers/capitalizeWord.js';
-import splitIntoWords from '../helpers/splitIntoWords.js';
+import capitalizeWord from '../helpers/capitalizeWord';
+import normalizeWhiteSpaces from '../helpers/normalizeWhiteSpaces';
+import splitIntoWords from '../helpers/splitIntoWords';
 
 /**
  * Options for `formatToCapitalizedd` function.
@@ -7,18 +8,13 @@ import splitIntoWords from '../helpers/splitIntoWords.js';
 type Options = {
   wordsToKeepLowerCase?: string[];
   wordsToKeepUpperCase?: string[];
+  trimTrailingWhiteSpaces?: boolean;
 };
 
 /**
  * A list of default words to keep upper case.
  */
-const DEFAULT_WORDS_TO_KEEP_UPPER_CASE = [
-  'cnpj',
-  'cpf',
-  'ltda',
-  'qp',
-  'tv',
-];
+const DEFAULT_WORDS_TO_KEEP_UPPER_CASE = ['cnpj', 'cpf', 'ltda', 'qp', 'tv'];
 
 /**
  * A list of default words to keep lower case.
@@ -62,6 +58,11 @@ const DEFAULT_WORDS_TO_KEEP_LOWER_CASE = [
  *   wordsToKeepUpperCase: ['tv']
  * })
  * //=> 'Nova TV Foi Lançada'
+ *
+ * formatToCapitalized(' com espaços antes e depois ', {
+ *   trimTrailingWhiteSpaces: false
+ * })
+ * //=> ' Com Espaços Antes e Depois '
  * ```
  * @param value - A `string` to capitalize
  */
@@ -70,18 +71,18 @@ const formatToCapitalized = (
   {
     wordsToKeepLowerCase = DEFAULT_WORDS_TO_KEEP_LOWER_CASE,
     wordsToKeepUpperCase = DEFAULT_WORDS_TO_KEEP_UPPER_CASE,
-  }: Options = {}
-): string => (
-  splitIntoWords(value)
-    .map((word, index) => {
-      const lowerCaseWord = word.toLocaleLowerCase();
-      if (index > 0 && wordsToKeepLowerCase.indexOf(lowerCaseWord) !== -1)
-        return lowerCaseWord;
-      if (wordsToKeepUpperCase.indexOf(lowerCaseWord) !== -1)
-        return word.toLocaleUpperCase();
+    trimTrailingWhiteSpaces = true,
+  }: Options = {},
+): string =>
+  splitIntoWords(trimTrailingWhiteSpaces ? normalizeWhiteSpaces(value) : value)
+    .map((word, index, words) => {
+      const isFirstWord = (word && index === 0) || (!words[0] && index === 1);
+      const wordInLowerCase = word.toLocaleLowerCase();
+      if (!isFirstWord && wordsToKeepLowerCase.indexOf(wordInLowerCase) !== -1)
+        return wordInLowerCase;
+      if (wordsToKeepUpperCase.indexOf(wordInLowerCase) !== -1) return word.toLocaleUpperCase();
       return capitalizeWord(word);
     })
-    .join(' ')
-);
+    .join(' ');
 
 export default formatToCapitalized;
