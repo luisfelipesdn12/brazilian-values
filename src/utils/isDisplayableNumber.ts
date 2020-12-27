@@ -1,13 +1,21 @@
 /**
- * Larger displayed without scientific notation.
+ * The largest number not displayed in scientific notation.
  */
-const LARGER_DISPLAYABLE_NUMBER = 999_999_999_999_999_934_463;
+const LARGEST_DISPLAYABLE_NUMBER = 999_999_999_999_999_934_463;
 
 /**
- * Check if value is displayed correctly, without scientific notation.
+ * Check if a number is displayed "as is", instead of scientific notation.
+ * @example
+ * isDisplayableNumber(1e21);
+ * //=> false
+ *
+ * isDisplayableNumber(4319);
+ * //=> true
  * @param {number} value
  * @returns {boolean}
  */
-export default function isDisplayableNumber(value: number): boolean {
-  return value <= LARGER_DISPLAYABLE_NUMBER;
+function isDisplayableNumber(value: number): boolean {
+  return value <= LARGEST_DISPLAYABLE_NUMBER;
 }
+
+export default isDisplayableNumber;
