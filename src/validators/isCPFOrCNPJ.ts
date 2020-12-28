@@ -1,7 +1,5 @@
-import isCPF, { CPF_PATTERN } from "./isCPF";
-import isCNPJ, { CNPJ_PATTERN } from "./isCNPJ";
-
-const PATTERNS = [CPF_PATTERN, CNPJ_PATTERN];
+import isCNPJ, { CNPJ_PATTERN } from './isCNPJ.js';
+import isCPF, { CPF_PATTERN } from './isCPF.js';
 
 /**
  * Check if a value is a valid CPF or CNPJ
@@ -36,11 +34,9 @@ const PATTERNS = [CPF_PATTERN, CNPJ_PATTERN];
  * @param value - A text containing a CPF or CNPJ
  */
 const isCPFOrCNPJ = (value: string): boolean => {
-  const matches = PATTERNS.map((pattern) => pattern.test(value));
-
-  if (!matches.includes(true)) return false;
-
-  return matches[0] ? isCPF(value) : isCNPJ(value);
+  if (CPF_PATTERN.test(value)) return isCPF(value);
+  if (CNPJ_PATTERN.test(value)) return isCNPJ(value);
+  return false;
 };
 
 export default isCPFOrCNPJ;
