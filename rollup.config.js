@@ -35,7 +35,7 @@ const options = {
       format: 'esm',
     }),
     createOutputOption({
-      file: './dist/brazilian-values.ejs',
+      file: './dist/brazilian-values.mjs',
       format: 'esm',
     }),
     createOutputOption({
