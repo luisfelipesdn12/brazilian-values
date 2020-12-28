@@ -1,6 +1,6 @@
 {
   "name": "brazilian-values",
-  "version": "0.8.0",
+  "version": "0.11.0-beta.0",
   "sideEffects": false,
   "description": "Validates and formats brazilian values, like money (BRL), CPF, CNPJ, dates etc.",
   "keywords": [
@@ -14,8 +14,8 @@
     "BRL"
   ],
   "files": [
-    "dist/",
-    "types/"
+    "dist",
+    "types"
   ],
   "author": {
     "name": "Vitor Luiz Cavalcanti",
@@ -23,13 +23,23 @@
     "email": "vitorluizc@outlook.com"
   },
   "license": "MIT",
-  "cdn": "dist/brazilian-values.umd.js",
-  "main": "dist/brazilian-values.js",
-  "types": "types/brazilian-values.d.ts",
-  "unpkg": "dist/brazilian-values.umd.js",
-  "module": "dist/brazilian-values.esm.js",
-  "jsdelivr": "dist/brazilian-values.umd.js",
-  "umd:main": "dist/brazilian-values.umd.js",
+  "cdn": "./dist/brazilian-values.umd.min.js",
+  "main": "./dist/brazilian-values.js",
+  "types": "./types/brazilian-values.d.ts",
+  "unpkg": "./dist/brazilian-values.umd.min.js",
+  "module": "./dist/brazilian-values.esm.js",
+  "jsdelivr": "./dist/brazilian-values.umd.min.js",
+  "umd:main": "./dist/brazilian-values.umd.js",
+  "exports": {
+    ".": [
+      {
+        "import": "./dist/brazilian-values.mjs",
+        "require": "./dist/brazilian-values.cjs",
+        "default": "./dist/brazilian-values.js"
+      },
+      "./dist/brazilian-values.js"
+    ]
+  },
   "scripts": {
     "test": "npm run test:transpile && npm run test:unit",
     "test:transpile": "tsc -p ./tsconfig.test.json",

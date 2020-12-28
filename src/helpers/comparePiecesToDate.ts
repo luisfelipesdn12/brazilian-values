@@ -1,18 +1,21 @@
-import type DatePieces from '../models/DatePieces.js';
+import type DateTimePieces from '../models/DateTimePieces.js';
 import parsePiecesToDate from './parsePiecesToDate.js';
 
 /**
  * Compare pieces of a date to values obtained from a Date instance.
- * @param pieces - Pieces of a date (date, month and year).
+ * @param pieces - Pieces of a date (date, month, year, hours, minutes and seconds).
  * @param instance - A Date instance.
  */
 const comparePiecesToDate = (
-  pieces: DatePieces,
+  pieces: DateTimePieces,
   instance: Date = parsePiecesToDate(pieces),
 ): boolean => (
   instance.getDate() === pieces.date &&
   instance.getMonth() === pieces.month &&
-  instance.getFullYear() === pieces.year
+  instance.getFullYear() === pieces.year &&
+  instance.getHours() === pieces.hours &&
+  instance.getMinutes() === pieces.minutes &&
+  instance.getSeconds() === pieces.seconds
 );
 
 export default comparePiecesToDate;

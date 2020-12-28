@@ -57,13 +57,45 @@ if (!isCNPJ(value))
 const document = formatToCNPJ(value);
 //=> '12.727.442/0001-13'
 ```
-## Sumário API
-
-- [Formatação](#Formatação)
-- [Conversores](#Conversores)
-- [Validadores](#Validadores)
 
 ## API
+
+<details>
+  <summary>Formatadores</summary>
+
+- [`formatToBRL`](#formatToBRL)
+- [`formatToCapitalized`](#formatToCapitalized)
+- [`formatToCEP`](#formatToCEP)
+- [`formatToCNPJ`](#formatToCNPJ)
+- [`formatToCPF`](#formatToCPF)
+- [`formatToCPFOrCNPJ`](#formatToCPFOrCNPJ)
+- [`formatToDate`](#formatToDate)
+- [`formatToDateTime`](#formatToDateTime)
+- [`formatToList`](#formatToList)
+- [`formatToNumber`](#formatToNumber)
+- [`formatToPhone`](#formatToPhone)
+- [`formatToRG`](#formatToRG)
+</details>
+
+<details>
+  <summary>Conversores</summary>
+
+- [`parseToArray`](#parseToArray)
+- [`parseToDate`](#parseToDate)
+- [`parseToNumber`](#parseToNumber)
+</details>
+
+<details>
+  <summary>Validadores</summary>
+
+- [`isCEP`](#isCEP)
+- [`isCNPJ`](#isCNPJ)
+- [`isCPF`](#isCPF)
+- [`isCPFOrCNPJ`](#isCPFOrCNPJ)
+- [`isDate`](#isDate)
+- [`isDDD`](#isDDD)
+- [`isPhone`](#isPhone)
+</details>
 
 ### Formatação
 
@@ -289,6 +321,12 @@ Converte a data no formato brasileiro para uma instância de `Date`.
 parseToDate('28/03/1996')
 //=> Date('1996-03-28T03:00:00.000Z')
 
+parseToDate('28/03/1996 20:00')
+//=> Date('1996-03-28T23:00:00.000Z')
+
+parseToDate('28/03/1996 20:00:00')
+//=> Date('1996-03-28T23:00:00.000Z')
+
 parseToDate('31/02/2018')
 //=> throws Error('Value "31/02/2018" is an invalid date.')
 ```
@@ -338,6 +376,8 @@ isCEP('1982891928981982198')
 
 Verifica se é um CNPJ válido.
 
+> Relacionado: [`isCPFOrCNPJ`](#isCPFOrCNPJ).
+
 ```js
 isCNPJ('41142260000189')
 //=> true
@@ -356,6 +396,8 @@ isCNPJ('11.111.111/1111-11')
 
 Verifica se é um CPF válido.
 
+> Relacionado: [`isCPFOrCNPJ`](#isCPFOrCNPJ).
+
 ```js
 isCPF('366.418.768-70')
 //=> true
@@ -370,6 +412,41 @@ isCPF('2131201872781')
 //=> false
 
 isCPF('11111111111')
+//=> false
+```
+
+#### `isCPFOrCNPJ`
+
+Verifica se é um CPF ou um CNPJ válido.
+
+> Relacionado: [`isCPF`](#isCPF), [`isCNPJ`](#isCNPJ).
+
+```js
+isCPFOrCNPJ('366.418.768-70')
+//=> true
+
+isCPFOrCNPJ('36641876870')
+//=> true
+
+isCPFOrCNPJ('213.198.013-20')
+//=> false
+
+isCPFOrCNPJ('2131201872781')
+//=> false
+
+isCPFOrCNPJ('11111111111')
+//=> false
+
+isCPFOrCNPJ('41142260000189')
+//=> true
+
+isCPFOrCNPJ('45.723.174/0001-10')
+//=> true
+
+isCPFOrCNPJ('411407182')
+//=> false
+
+isCPFOrCNPJ('11.111.111/1111-11')
 //=> false
 ```
 
