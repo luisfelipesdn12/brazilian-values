@@ -11,7 +11,7 @@ const MAXIMUM_REPRESENTABLE_NUMBER = 999_999_999_999_999_934_463;
 const MINIMUM_REPRESENTABLE_NUMBER = -MAXIMUM_REPRESENTABLE_NUMBER;
 
 /**
- * Check if a number is representable. Representable numbers is displayed "as
+ * Check if a number is representable. Representable numbers are displayed "as
  * is", instead of displayed in scientific notation.
  * @example
  * isRepresentableNumber(1e21);
