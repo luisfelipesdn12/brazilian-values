@@ -6,7 +6,7 @@
  */
 const options = {
   arrowParens: 'always',
-  printWidth: 100,
+  printWidth: 80,
   quoteProps: 'consistent',
   semi: true,
   singleQuote: true,
